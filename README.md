@@ -1,4 +1,10 @@
-# Welcome to your Lovable project
+# SEEn
+
+Low-cost eyecare access for her.
+
+A mobile web AR/XR assistive tool that turns any smartphone into free personalized glasses.
+
+---
 
 ## Project info
 

@@ -4,25 +4,29 @@ export interface VisionPreset {
   brightness: number;
 }
 
+export const SNELLEN_ROWS = [
+  { letters: 'E F P', size: 120 },   // Row 1 ~20/200
+  { letters: 'T Z B', size: 80 },    // Row 2 ~20/100
+  { letters: 'L P D', size: 48 },    // Row 3 ~20/50
+  { letters: 'F E C', size: 32 },    // Row 4 ~20/40
+  { letters: 'O T Z', size: 24 },    // Row 5 ~20/30
+  { letters: 'P F D', size: 18 },    // Row 6 ~20/20
+];
+
+export type VisionLevel = 'Mild' | 'Moderate' | 'Significant';
+
 export interface ScreeningResult {
-  scores: number[];
-  totalScore: number;
+  lastRowPassed: number;
+  level: VisionLevel;
   preset: VisionPreset;
 }
 
 const STORAGE_KEY = 'seen-screening-result';
 
-export const SNELLEN_LETTERS = [
-  { letters: 'E F P', size: 72 },
-  { letters: 'T O Z', size: 48 },
-  { letters: 'L P E D', size: 32 },
-  { letters: 'P E C F D', size: 20 },
-];
-
-export function calculatePreset(totalScore: number): VisionPreset {
-  if (totalScore <= 2) return { zoom: 1.2, contrast: 110, brightness: 100 };
-  if (totalScore <= 5) return { zoom: 2.0, contrast: 180, brightness: 120 };
-  return { zoom: 3.5, contrast: 250, brightness: 130 };
+export function calculatePresetFromRow(lastRowPassed: number): { level: VisionLevel; preset: VisionPreset } {
+  if (lastRowPassed <= 2) return { level: 'Significant', preset: { zoom: 3.5, contrast: 250, brightness: 130 } };
+  if (lastRowPassed <= 4) return { level: 'Moderate', preset: { zoom: 2.0, contrast: 180, brightness: 120 } };
+  return { level: 'Mild', preset: { zoom: 1.2, contrast: 110, brightness: 100 } };
 }
 
 export const NEAR_PRESET: VisionPreset = { zoom: 1.5, contrast: 200, brightness: 110 };
