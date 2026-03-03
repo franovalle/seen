@@ -136,7 +136,7 @@ const VisionScreening: React.FC<Props> = ({ onComplete }) => {
         Let's Go
       </Button>
       <p className="text-muted-foreground text-xs text-center leading-relaxed px-4 max-w-xs">
-        This near vision screening is not a replacement for a full eye exam. Please see an eye care professional for a complete vision assessment.
+        This near vision screening is not a medical diagnosis and is not a replacement for a full eye exam.
       </p>
     </div>
   );
