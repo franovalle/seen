@@ -1,14 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import VisionScreening from '@/components/VisionScreening';
+import GlassesView from '@/components/GlassesView';
+import { loadScreeningResult, clearScreeningResult } from '@/lib/screeningLogic';
+
+type Screen = 'screening' | 'glasses';
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+  const [screen, setScreen] = useState<Screen>(
+    loadScreeningResult() ? 'glasses' : 'screening'
   );
+
+  const handleRecalibrate = () => {
+    clearScreeningResult();
+    setScreen('screening');
+  };
+
+  if (screen === 'screening') {
+    return <VisionScreening onComplete={() => setScreen('glasses')} />;
+  }
+
+  return <GlassesView onRecalibrate={handleRecalibrate} />;
 };
 
 export default Index;
