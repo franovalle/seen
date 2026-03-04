@@ -27,7 +27,7 @@ const ArmLengthIcon = () => (
   </svg>
 );
 
-const VisionScreening: React.FC<Props> = ({ onComplete }) => {
+const VisionScreening: React.FC<Props> = ({ onComplete, onStartTest }) => {
   const [phase, setPhase] = React.useState<'intro' | 'test' | 'result'>('intro');
   const [currentRow, setCurrentRow] = React.useState(0);
   const [lastRowPassed, setLastRowPassed] = React.useState(0);
