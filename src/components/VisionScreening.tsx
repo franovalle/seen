@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ArmLengthIcon = () => (
-  <svg viewBox="0 0 120 100" className="w-24 h-20 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg viewBox="0 0 120 100" className="w-24 h-20 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Person holding phone at arm's length">
     {/* Stick figure */}
     <circle cx="30" cy="20" r="8" />
     <line x1="30" y1="28" x2="30" y2="55" />
