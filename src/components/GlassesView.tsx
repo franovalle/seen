@@ -61,7 +61,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           <>
             <h2 className="text-foreground text-xl font-extrabold mb-3">Camera Access Needed</h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              SEEn needs your camera to work as your glasses. Please enable camera access in your browser settings and refresh.
+              SEEn needs your camera to work as your glasses. Please turn on camera access in your browser settings and refresh.
             </p>
           </>
         )}
