@@ -39,7 +39,7 @@ const InfoOverlay: React.FC<Props> = ({ open, onClose, onRecalibrate }) => {
             variant="outline"
             className="w-full h-11 font-bold rounded-xl text-sm"
           >
-            Recalibrate Vision
+            Redo Vision Check
           </Button>
           <Button
             onClick={onClose}

@@ -124,7 +124,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
         <div className="frosted-glass rounded-2xl flex p-1 border border-border">
           <button
             onClick={() => handleModeChange('near')}
-            className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-colors ${
+            className={`px-5 py-2.5 min-h-[44px] rounded-xl text-sm font-bold transition-colors ${
               mode === 'near'
                 ? 'bg-primary text-primary-foreground'
                 : 'text-foreground'
@@ -134,7 +134,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           </button>
           <button
             onClick={() => handleModeChange('far')}
-            className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-colors ${
+            className={`px-5 py-2.5 min-h-[44px] rounded-xl text-sm font-bold transition-colors ${
               mode === 'far'
                 ? 'bg-primary text-primary-foreground'
                 : 'text-foreground'

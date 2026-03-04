@@ -134,10 +134,10 @@ const VisionScreening: React.FC<Props> = ({ onComplete, onStartTest }) => {
         Based on your screening, SEEn has set your display to <span className="font-bold text-foreground">{resultLevel} Clarity Mode</span>. You can adjust your settings anytime in the menu.
       </p>
       <Button onClick={handleFinish} className="w-full max-w-xs h-14 text-base font-bold rounded-xl bg-[hsl(10,80%,60%)] hover:bg-[hsl(10,80%,55%)] text-white mb-8">
-        Let's Go
+        Continue to Camera View
       </Button>
       <p className="text-muted-foreground text-xs text-center leading-relaxed px-4 max-w-xs">
-        This near vision screening is not a medical diagnosis and is not a replacement for a full eye exam.
+        This near vision screening is not a medical diagnosis and does not replace a full eye exam.
       </p>
     </div>
   );
