@@ -113,7 +113,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
         <button
           onClick={() => setInfoOpen(true)}
           className="w-11 h-11 rounded-full frosted-glass flex items-center justify-center border border-border"
-          aria-label="Info"
+          aria-label="About SEEn"
         >
           <Info className="w-5 h-5 text-foreground" />
         </button>
