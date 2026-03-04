@@ -94,6 +94,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           autoPlay
           playsInline
           muted
+          aria-label="Live camera feed"
           className="w-full h-full object-cover"
           style={{
             filter: `contrast(${contrast}%) brightness(${brightness}%)`,
