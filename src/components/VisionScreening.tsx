@@ -6,6 +6,7 @@ import { Progress } from '@/components/ui/progress';
 
 interface Props {
   onComplete: () => void;
+  onStartTest?: () => void;
 }
 
 const ArmLengthIcon = () => (
