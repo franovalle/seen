@@ -1,125 +1,83 @@
 
 
-# SEEn — Complete Build Plan
+# Accessibility Audit — Findings and Fix Plan
 
-## Mission
-A mobile web AR/XR assistive tool that turns any smartphone into free personalized glasses for girls and women in communities where vision correction is inaccessible or unaffordable.
+## Issues Found
 
----
+### 1. ALT TEXT
+| Location | Issue |
+|----------|-------|
+| `VisionScreening.tsx` — ArmLengthIcon SVG | No accessible label. Needs `role="img"` + `aria-label` |
+| `GlassesView.tsx` — `<video>` element | No accessible label for camera feed. Needs `aria-label` |
+| `LensOverlay.tsx` — decorative border div | Missing `aria-hidden="true"` |
 
-## Design System
+### 2. READING LEVEL (above Grade 8)
+| Location | Current Text | Simplified |
+|----------|-------------|------------|
+| `InfoOverlay.tsx` | "vision correction is inaccessible or unaffordable" | "glasses are hard to find or too expensive" |
+| `InfoOverlay.tsx` | "consult an eye care professional for proper vision care" | "please see an eye doctor for a full check-up" |
+| `InfoOverlay.tsx` | "assistive clarity tool" | "a tool to help you see more clearly" |
+| `InfoOverlay.tsx` | "Recalibrate Vision" button | "Redo Vision Check" |
+| `BottomSheet.tsx` | "Assistive clarity tool only. Not a medical device." | "This tool helps you see more clearly. It is not a medical device." |
+| `GlassesView.tsx` | "enable camera access in your browser settings" | "turn on camera access in your browser settings" |
+| `VisionScreening.tsx` | "not a replacement for a full eye exam" | "it does not replace a full eye exam" |
 
-- **Background**: Cream `#FAF7F2` everywhere
-- **Text & accents**: Warm coral orange `#E8834A` — all text, buttons, sliders, lens overlay, CTAs
-- **Frosted glass**: `rgba(250,247,242,0.85)` + `backdrop-filter: blur(12px)`
-- **Typography**: Nunito (Google Font), bold and rounded
-- **Logo**: Uploaded image (`Peach_and_Beige_Playful_Art_Gallery_Logo.png`) saved as `src/assets/seen-logo.png` — used as wordmark on both screens, no text recreation
-- **No plum, no purple, no white backgrounds — cream and coral only**
+### 3. WCAG AA COLOR CONTRAST
+| Issue | Detail |
+|-------|--------|
+| `--foreground` (hsl 22,76%,60%) on `--background` (hsl 30,33%,96%) | Orange on cream ≈ 3:1. **Fails 4.5:1.** Darken foreground to ~40% lightness |
+| `--muted-foreground` (hsl 22,40%,50%) on background | ≈ 3.5:1. **Fails 4.5:1.** Darken to ~35% lightness |
+| `BottomSheet.tsx` text-[10px] disclaimer | Below minimum readable size. Increase to text-xs (12px) |
+| `--primary` same as foreground | Also fails on light background for non-button text uses |
 
----
+**Fix:** Darken `--foreground` to `22 76% 38%` and `--muted-foreground` to `22 40% 35%`. This preserves the warm orange/brown hue but passes 4.5:1. Update both light and dark theme blocks. Primary/accent stay for button backgrounds where foreground is the light cream (that pairing passes).
 
-## Architecture
+### 4. DESCRIPTIVE LINK TEXT
+| Location | Current | Fix |
+|----------|---------|-----|
+| `GlassesView.tsx` info button | `aria-label="Info"` | `aria-label="About SEEn"` |
+| `BottomSheet.tsx` Reset button | "Reset" | "Reset Settings" |
+| `VisionScreening.tsx` result button | "Let's Go" | "Continue to Camera View" |
 
-Single-page React app. **No router.** State toggle (`screening` | `glasses`) in `Index.tsx`. Camera stream persists across transitions. No page reloads.
-
----
-
-## Screen 1 — Vision Screening (`src/components/VisionScreening.tsx`)
-
-- **Logo image** centered at top (~200px wide)
-- **Tagline** below logo: "LOW-COST EYEGLASSES. ACCESSIBLE FOR HER." — small caps, coral orange, letter-spaced
-- **4-step Snellen-style test**: letters at decreasing sizes (72px → 48px → 32px → 20px)
-- **3 buttons per step**: Yes / Somewhat / No
-- **Progress indicator** showing current step
-- **Scoring**: Yes=0, Somewhat=1, No=2. Sum all 4 (range 0–8):
-  - 0–2 (mild): zoom 1.2×, contrast 110%, brightness 100%
-  - 3–5 (moderate): zoom 2.0×, contrast 180%, brightness 120%
-  - 6–8 (significant): zoom 3.5×, contrast 250%, brightness 130%
-- **Medical disclaimer**: "This is not a medical diagnosis. SEEn is an assistive clarity tool only."
-- **"Start Seeing" CTA** in coral orange → saves results to `localStorage`, transitions to glasses screen
-
----
-
-## Screen 2 — AR Glasses View (`src/components/GlassesView.tsx`)
-
-### Top Bar (floating)
-- **Logo image** top left (~80px wide)
-- **Circular info/help icon** top right → opens `InfoOverlay`
-
-### Camera Feed (full screen, edge-to-edge)
-- `getUserMedia({ video: true })` — no `facingMode` constraint
-- Video element: `filter: contrast(x%) brightness(y%)`
-- Video inside `overflow: hidden` container: `transform: scale(z)` for zoom
-- Settings auto-loaded from screening results on first use
-
-### Lens Frame Overlay (`src/components/LensOverlay.tsx`)
-- Coral orange rounded rectangle border (`#E8834A`, ~3px, border-radius ~24px), always centered
-- Gyroscope parallax: `DeviceOrientationEvent` shifts overlay ±10px via `transform: translate()`
-- Silent fallback if unsupported
-
-### Near/Far Mode Toggle (above bottom sheet)
-- **📖 Near**: zoom 1.5×, contrast 200%, brightness 110%
-- **🏫 Far**: zoom 3.0×, contrast 150%, brightness 105%
-- Loads preset values; user can still fine-tune sliders manually
-
-### Bottom Sheet (`src/components/BottomSheet.tsx`) — frosted glass, always visible
-- **Zoom slider**: 1.0× – 4.0×
-- **Contrast slider**: 100% – 300%
-- **Brightness slider**: 80% – 140%
-- Large readable value label next to each slider
-- **Reset button** (coral orange) — returns sliders to current mode defaults
-- **Disclaimer**: "Assistive clarity tool only. Not a medical device."
-
-### Ambient Light Auto-Adjust (`src/hooks/useAmbientLight.ts`)
-- `AmbientLightSensor` API, silent fallback if unsupported
-- Auto-adjusts brightness value → **slider thumb and value label sync in real time**
-- **3-second manual override cooldown**: when user drags brightness slider, sensor pauses for 3s before resuming
-
-### Info Overlay (`src/components/InfoOverlay.tsx`)
-- Mission explanation text
-- **"Recalibrate Vision" link** — clears `localStorage`, returns to screening screen
+### 5. MOBILE FRIENDLY (375px)
+| Location | Issue | Fix |
+|----------|-------|-----|
+| `BottomSheet.tsx` Reset button | `h-10` (40px) — below 44px minimum | Change to `h-11` (44px) |
+| `GlassesView.tsx` Near/Far toggle buttons | `py-2.5` — computed ~36px. Below 44px | Add `min-h-[44px]` |
+| `InfoOverlay.tsx` buttons | `h-11` (44px) — passes | No change |
+| `BottomSheet.tsx` disclaimer | `text-[10px]` too small on mobile | `text-xs` (12px) |
 
 ---
 
-## Error Handling
-- Camera permission denied → friendly message + instructions to enable
-- No camera detected → helpful fallback message
-- Insecure origin (non-HTTPS) → clear warning
-- Unsupported sensor APIs → silently skipped, no errors shown
+## File Changes
 
----
+### 1. `src/index.css` — Fix contrast ratios
+- `--foreground`: `22 76% 60%` → `22 76% 38%` (both light and dark blocks)
+- `--card-foreground`, `--popover-foreground`: same change (they mirror foreground)
+- `--muted-foreground`: `22 40% 50%` → `22 40% 35%` (both blocks)
+- `--secondary-foreground`, `--sidebar-foreground`, `--sidebar-accent-foreground`: update to match foreground
 
-## Files to Create
+### 2. `src/components/VisionScreening.tsx`
+- ArmLengthIcon SVG: add `role="img"` and `aria-label="Person holding phone at arm's length"`
+- Result "Let's Go" → "Continue to Camera View"
+- Result disclaimer: "is not a replacement for" → "does not replace"
 
-| File | Purpose |
-|------|---------|
-| `src/assets/seen-logo.png` | Uploaded logo image |
-| `src/lib/screeningLogic.ts` | Scoring algorithm, presets, localStorage helpers |
-| `src/hooks/useCamera.ts` | getUserMedia wrapper + error states |
-| `src/hooks/useAmbientLight.ts` | AmbientLightSensor + cooldown logic |
-| `src/hooks/useGyroscope.ts` | DeviceOrientationEvent → ±10px offset |
-| `src/components/VisionScreening.tsx` | Screen 1 |
-| `src/components/GlassesView.tsx` | Screen 2 |
-| `src/components/LensOverlay.tsx` | Coral lens frame + parallax |
-| `src/components/BottomSheet.tsx` | Frosted glass sliders panel |
-| `src/components/InfoOverlay.tsx` | Mission + recalibrate link |
+### 3. `src/components/GlassesView.tsx`
+- `<video>`: add `aria-label="Live camera feed"`
+- Info button: `aria-label="Info"` → `aria-label="About SEEn"`
+- Camera denied text: "enable" → "turn on"
+- Near/Far toggle buttons: add `min-h-[44px]`
 
-## Files to Modify
+### 4. `src/components/BottomSheet.tsx`
+- Reset button: `h-10` → `h-11`, label "Reset" → "Reset Settings"
+- Disclaimer: `text-[10px]` → `text-xs`, simplify text
 
-| File | Change |
-|------|--------|
-| `index.html` | Add Nunito font link, update title to "SEEn" |
-| `src/index.css` | Cream/coral CSS variables, frosted glass utility |
-| `src/pages/Index.tsx` | State toggle between VisionScreening and GlassesView |
+### 5. `src/components/InfoOverlay.tsx`
+- Simplify all description text to Grade 8 reading level
+- "Recalibrate Vision" → "Redo Vision Check"
 
----
+### 6. `src/components/LensOverlay.tsx`
+- Add `aria-hidden="true"` to the decorative overlay container
 
-## Accessibility
-- All touch targets ≥ 44×44px
-- High-contrast labels (coral on cream meets WCAG AA 4.5:1)
-- Large, readable slider values
-- Fully visual — no audio required
-
-## Not Included
-No login, backend, database, recording, AI/ML, multi-page navigation, analytics, or decorative animations over the camera feed.
+No changes to branding, logo, layout structure, screening logic, or any other files.
 
