@@ -22,11 +22,11 @@ const InfoOverlay: React.FC<Props> = ({ open, onClose, onRecalibrate }) => {
           </DialogTitle>
           <DialogDescription className="text-muted-foreground text-center text-sm leading-relaxed mt-2">
             SEEn turns any smartphone into a free personalized vision tool
-            for girls and women in communities where eye care is hard to find
-            or too expensive.
+            for girls and women in communities where vision tools are too
+            expensive.
             <br /><br />
-            This is a tool to help you see more clearly — not a medical device
-            or diagnosis. Please see an eye doctor for a full check-up.
+            This is a tool to help you see more clearly — not a medical
+            device or diagnosis.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col items-center gap-3 mt-2">
