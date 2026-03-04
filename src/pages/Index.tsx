@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import VisionScreening from '@/components/VisionScreening';
+import XRScreeningWrapper from '@/components/XRScreeningWrapper';
 import GlassesView from '@/components/GlassesView';
 import { loadScreeningResult, clearScreeningResult } from '@/lib/screeningLogic';
 
@@ -16,7 +16,7 @@ const Index = () => {
   };
 
   if (screen === 'screening') {
-    return <VisionScreening onComplete={() => setScreen('glasses')} />;
+    return <XRScreeningWrapper onComplete={() => setScreen('glasses')} />;
   }
 
   return <GlassesView onRecalibrate={handleRecalibrate} />;
