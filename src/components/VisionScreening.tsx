@@ -10,7 +10,7 @@ interface Props {
 }
 
 const ArmLengthIcon = () => (
-  <svg viewBox="0 0 120 100" className="w-24 h-20 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg viewBox="0 0 120 100" className="w-24 h-20 text-muted-foreground" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="img" aria-label="Person holding phone at arm's length">
     {/* Stick figure */}
     <circle cx="30" cy="20" r="8" />
     <line x1="30" y1="28" x2="30" y2="55" />
@@ -134,10 +134,10 @@ const VisionScreening: React.FC<Props> = ({ onComplete, onStartTest }) => {
         Based on your screening, SEEn has set your display to <span className="font-bold text-foreground">{resultLevel} Clarity Mode</span>. You can adjust your settings anytime in the menu.
       </p>
       <Button onClick={handleFinish} className="w-full max-w-xs h-14 text-base font-bold rounded-xl bg-[hsl(10,80%,60%)] hover:bg-[hsl(10,80%,55%)] text-white mb-8">
-        Let's Go
+        Continue to Camera View
       </Button>
       <p className="text-muted-foreground text-xs text-center leading-relaxed px-4 max-w-xs">
-        This near vision screening is not a medical diagnosis and is not a replacement for a full eye exam.
+        This near vision screening is not a medical diagnosis and does not replace a full eye exam.
       </p>
     </div>
   );

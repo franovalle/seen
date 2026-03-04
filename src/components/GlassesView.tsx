@@ -61,7 +61,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           <>
             <h2 className="text-foreground text-xl font-extrabold mb-3">Camera Access Needed</h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              SEEn needs your camera to work as your glasses. Please enable camera access in your browser settings and refresh.
+              SEEn needs your camera to work as your glasses. Please turn on camera access in your browser settings and refresh.
             </p>
           </>
         )}
@@ -94,6 +94,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           autoPlay
           playsInline
           muted
+          aria-label="Live camera feed"
           className="w-full h-full object-cover"
           style={{
             filter: `contrast(${contrast}%) brightness(${brightness}%)`,
@@ -112,7 +113,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
         <button
           onClick={() => setInfoOpen(true)}
           className="w-11 h-11 rounded-full frosted-glass flex items-center justify-center border border-border"
-          aria-label="Info"
+          aria-label="About SEEn"
         >
           <Info className="w-5 h-5 text-foreground" />
         </button>
@@ -123,7 +124,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
         <div className="frosted-glass rounded-2xl flex p-1 border border-border">
           <button
             onClick={() => handleModeChange('near')}
-            className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-colors ${
+            className={`px-5 py-2.5 min-h-[44px] rounded-xl text-sm font-bold transition-colors ${
               mode === 'near'
                 ? 'bg-primary text-primary-foreground'
                 : 'text-foreground'
@@ -133,7 +134,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           </button>
           <button
             onClick={() => handleModeChange('far')}
-            className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-colors ${
+            className={`px-5 py-2.5 min-h-[44px] rounded-xl text-sm font-bold transition-colors ${
               mode === 'far'
                 ? 'bg-primary text-primary-foreground'
                 : 'text-foreground'

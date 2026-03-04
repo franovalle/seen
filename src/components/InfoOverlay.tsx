@@ -24,10 +24,10 @@ const InfoOverlay: React.FC<Props> = ({ open, onClose, onRecalibrate }) => {
             <span className="font-bold">Low-cost eyecare access for her.</span>
             <br /><br />
             SEEn turns any smartphone into a free pair of personalized glasses for girls and women
-            in communities where vision correction is inaccessible or unaffordable.
+            in communities where glasses are hard to find or too expensive.
             <br /><br />
-            This is an assistive clarity tool — not a medical device or diagnosis.
-            Please consult an eye care professional for proper vision care.
+            This is a tool to help you see more clearly — not a medical device or diagnosis.
+            Please see an eye doctor for a full check-up.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col items-center gap-3 mt-2">
@@ -39,7 +39,7 @@ const InfoOverlay: React.FC<Props> = ({ open, onClose, onRecalibrate }) => {
             variant="outline"
             className="w-full h-11 font-bold rounded-xl text-sm"
           >
-            Recalibrate Vision
+            Redo Vision Check
           </Button>
           <Button
             onClick={onClose}

@@ -7,6 +7,7 @@ const LensOverlay: React.FC = () => {
   return (
     <div
       className="absolute inset-0 pointer-events-none flex items-center justify-center z-10"
+      aria-hidden="true"
     >
       <div
         className="border-[3px] border-primary rounded-3xl"

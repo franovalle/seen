@@ -70,11 +70,11 @@ const BottomSheet: React.FC<Props> = ({
       </div>
 
       <div className="flex items-center justify-between">
-        <Button onClick={onReset} variant="outline" className="h-10 px-5 text-sm font-bold rounded-xl">
-          Reset
+        <Button onClick={onReset} variant="outline" className="h-11 px-5 text-sm font-bold rounded-xl">
+          Reset Settings
         </Button>
-        <p className="text-muted-foreground text-[10px] text-right leading-tight max-w-[55%]">
-          Assistive clarity tool only. Not a medical device.
+        <p className="text-muted-foreground text-xs text-right leading-tight max-w-[55%]">
+          This tool helps you see more clearly. It is not a medical device.
         </p>
       </div>
     </div>
