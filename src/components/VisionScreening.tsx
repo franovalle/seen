@@ -70,7 +70,7 @@ const VisionScreening: React.FC<Props> = ({ onComplete, onStartTest }) => {
         <p className="text-muted-foreground text-sm text-center leading-relaxed max-w-xs mb-10">
           This short screening helps SEEn set the right display for your eyes. It takes under 60 seconds and is not a medical diagnosis.
         </p>
-        <Button onClick={() => setPhase('test')} className="w-full max-w-xs h-14 text-base font-bold rounded-xl bg-[hsl(10,80%,60%)] hover:bg-[hsl(10,80%,55%)] text-white">
+        <Button onClick={() => { onStartTest?.(); setPhase('test'); }} className="w-full max-w-xs h-14 text-base font-bold rounded-xl bg-[hsl(10,80%,60%)] hover:bg-[hsl(10,80%,55%)] text-white">
           Start Screening
         </Button>
       </div>
