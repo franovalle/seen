@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import VisionScreening from '@/components/VisionScreening';
+import XRScreeningWrapper from '@/components/XRScreeningWrapper';
 import GlassesView from '@/components/GlassesView';
 import { loadScreeningResult, clearScreeningResult } from '@/lib/screeningLogic';
 
