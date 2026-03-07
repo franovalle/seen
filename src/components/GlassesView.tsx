@@ -6,7 +6,7 @@ import { loadScreeningResult, NEAR_PRESET, FAR_PRESET, type VisionPreset } from 
 import LensOverlay from '@/components/LensOverlay';
 import BottomSheet from '@/components/BottomSheet';
 import InfoOverlay from '@/components/InfoOverlay';
-import { Info } from 'lucide-react';
+import { Info, SwitchCamera } from 'lucide-react';
 
 interface Props {
   onRecalibrate: () => void;
