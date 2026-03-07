@@ -6,7 +6,9 @@ import { loadScreeningResult, clearScreeningResult } from '@/lib/screeningLogic'
 type Screen = 'screening' | 'glasses';
 
 const Index = () => {
-  const [screen, setScreen] = useState<Screen>('screening');
+  const [screen, setScreen] = useState<Screen>(
+    loadScreeningResult() ? 'glasses' : 'screening'
+  );
 
   const handleRecalibrate = () => {
     clearScreeningResult();
