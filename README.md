@@ -17,7 +17,7 @@
 
 ## Solution Overview
 
-**What we built:** SEEn is a browser-based mobile web app that uses a phone's camera with XR-style overlays — zoom, contrast, and brightness controls — to help a student see the blackboard more clearly in real time. No install. No login. No data ever leaves the device.
+**What we built:** ***SEEn*** is a browser-based mobile web app that uses a phone's camera with XR-style overlays — zoom, contrast, and brightness controls — to help a student see the blackboard more clearly in real time. No install. No login. No data ever leaves the device.
 
 **Key Features:**
 
@@ -25,9 +25,9 @@
 
 - **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140) sliders — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy in shared-phone classrooms.
 
-- **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making SEEn defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
+- **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making ***SEEn*** defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
 
-> **Disclaimer:** SEEn is an assistive clarity tool only. This near vision screening is not a replacement for a full eye exam. No diagnosis or prescription is made.
+> **Disclaimer:** ***SEEn*** is an assistive clarity tool only. This near vision screening is not a replacement for a full eye exam. No diagnosis or prescription is made.
 
 ***
 
