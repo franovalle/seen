@@ -36,7 +36,7 @@
 ### Access (No Installation Required)
 **Requirements:** Any modern mobile browser — Chrome on Android (recommended) or Safari on iOS. No install. No account. No API keys.
 
-🔗 **Live App:** [Insert Lovable Link]
+**Live App:** https://seenbyher.lovable.app
 
 > Just open the link on your phone and tap "Allow" when the browser requests camera access. That's it — no setup, no download, no login.
 
@@ -48,7 +48,7 @@
 
 **Step 3:** Point your phone at a blackboard or text → Use the zoom, contrast, and brightness sliders to adjust until text is visibly clearer → The AR HUD shows a real-time clarity score (High / Medium / Low).
 
-📹 **Demo Video:** [Insert YouTube/Loom Link] | 🔗 **Live App:** [Insert Lovable Link]
+ **Demo Video:** [Insert YouTube/Loom Link] | **Live App:** https://seenbyher.lovable.app
 
 ***
 
