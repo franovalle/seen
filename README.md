@@ -1,5 +1,5 @@
 # #75HER Project: SEEn
-**One-line Value Proposition:** School-age girls in low-income countries get assistive visual clarity for their classroom blackboard in under 2 minutes, with no install, no eye care access, and no data stored.
+**One-line Value Proposition:** School-age girls with no eye care access see their classroom blackboard clearly — free, private, and no install required.
 
 ***
 
