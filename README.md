@@ -9,7 +9,7 @@
 
 **Problem:** Every school day, 17.8 million children attend class unable to see the board, learning half as much as their peers (IAPB & Seva Foundation, 2024). In low-income countries, 2 out of 3 people who need eye care cannot get it — and girls bear the heaviest burden (WHO, May 2025).
 
-**Impact:** For millions of girls, eye care is the difference between staying in school and dropping out. Girls in Haiti and other low-income regions face heightened risk of exploitation and domestic labor when education breaks down (UN Women; Humanium). SEEn removes one barrier so she can at least see what's being taught.
+**Impact:** For millions of girls, eye care is the difference between staying in school and dropping out. Girls in low-income regions face heightened risk of exploitation and domestic labor when education breaks down (UN Women; Humanium). SEEn removes one barrier so she can at least see what's being taught.
 
 > 📌 Aligned with **SDG 4 – Quality Education** and **SDG 5 – Gender Equality**
 
