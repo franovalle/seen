@@ -34,9 +34,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
     onBrightnessChange: handleAmbientBrightness,
   });
 
-  useEffect(() => {
-    startCamera();
-  }, [startCamera]);
+  // Camera starts automatically via useCamera hook
 
   const applyPreset = (preset: VisionPreset) => {
     setZoom(preset.zoom);
