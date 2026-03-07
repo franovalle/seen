@@ -93,7 +93,7 @@
 | Known Issue | Workaround |
 |---|---|
 | WebXR `immersive-AR` not supported on iOS Safari | Silent fallback via `@react-three/xr` — app loads as standard camera overlay with no error |
-| `getUserMedia` has no `facingMode` constraint | Works on both phones and laptops; less control over which camera activates on multi-camera devices |
+| `getUserMedia` had no `facingMode` constraint — less control over which camera activates on multi-camera devices | Fixed — flip camera button added; defaults to back camera (`environment`) for blackboard use |
 | Clarity score derived from slider values, not actual vision measurement | Labeled as assistive tool only; no medical or diagnostic claims made |
 | CSS filters may not improve readability for all vision profiles | Filter ranges (contrast 100–300, brightness 80–140, zoom 1.0–4.0) tested and adjusted in-browser |
 | Self-exam UX: buttons may be difficult to read if vision is already blurry | Read and familiarize yourself with all on-screen buttons before starting the exam; guided setup screen planned for v2 |
