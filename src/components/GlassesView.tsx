@@ -6,7 +6,7 @@ import { loadScreeningResult, NEAR_PRESET, FAR_PRESET, type VisionPreset } from 
 import LensOverlay from '@/components/LensOverlay';
 import BottomSheet from '@/components/BottomSheet';
 import InfoOverlay from '@/components/InfoOverlay';
-import { Info } from 'lucide-react';
+import { Info, SwitchCamera } from 'lucide-react';
 
 interface Props {
   onRecalibrate: () => void;
@@ -15,7 +15,7 @@ interface Props {
 type Mode = 'near' | 'far';
 
 const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
-  const { videoRef, error, ready, startCamera } = useCamera();
+  const { videoRef, error, ready, flipCamera, flipping } = useCamera();
   const [infoOpen, setInfoOpen] = useState(false);
 
   const result = loadScreeningResult();
@@ -34,9 +34,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
     onBrightnessChange: handleAmbientBrightness,
   });
 
-  useEffect(() => {
-    startCamera();
-  }, [startCamera]);
+  // Camera starts automatically via useCamera hook
 
   const applyPreset = (preset: VisionPreset) => {
     setZoom(preset.zoom);
@@ -110,13 +108,23 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 pt-3 pb-2">
         <img src={seenLogo} alt="SEEn logo" className="h-10" />
-        <button
-          onClick={() => setInfoOpen(true)}
-          className="w-11 h-11 rounded-full frosted-glass flex items-center justify-center border border-border"
-          aria-label="About SEEn"
-        >
-          <Info className="w-5 h-5 text-foreground" />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={flipCamera}
+            disabled={flipping}
+            className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg disabled:opacity-70"
+            aria-label="Switch camera"
+          >
+            <SwitchCamera className={`w-5 h-5 ${flipping ? 'animate-spin' : ''}`} />
+          </button>
+          <button
+            onClick={() => setInfoOpen(true)}
+            className="w-11 h-11 rounded-full frosted-glass flex items-center justify-center border border-border"
+            aria-label="About SEEn"
+          >
+            <Info className="w-5 h-5 text-foreground" />
+          </button>
+        </div>
       </div>
 
       {/* Near/Far toggle */}
