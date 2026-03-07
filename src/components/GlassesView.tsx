@@ -95,8 +95,10 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
           aria-label="Live camera feed"
           className="w-full h-full object-cover"
           style={{
-            filter: `contrast(${contrast}%) brightness(${brightness}%)`,
-            transform: `scale(${zoom})`,
+            filter: contrast === 100 && brightness === 100
+              ? 'none'
+              : `contrast(${contrast}%) brightness(${brightness}%)`,
+            transform: zoom === 1 ? 'none' : `scale(${zoom})`,
             transformOrigin: 'center center',
           }}
         />
