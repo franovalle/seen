@@ -19,7 +19,7 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
   const [infoOpen, setInfoOpen] = useState(false);
 
   const result = loadScreeningResult();
-  const basePreset = result?.preset ?? { zoom: 1.5, contrast: 150, brightness: 100 };
+  const basePreset = result?.preset ?? { zoom: 1.0, contrast: 100, brightness: 100 };
 
   const [mode, setMode] = useState<Mode>('near');
   const [zoom, setZoom] = useState(basePreset.zoom);
