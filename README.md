@@ -23,7 +23,7 @@
 
 - **Language-Neutral Vision Check (Snellen Flow):** A 3-screen flow (Welcome → Letter Test → Results) using a 6-row Snellen-style letter chart with tap-based answers instead of reading letters aloud — works across all languages with no literacy barrier. Scoring shows Mild / Moderate / Significant clarity output.
 
-- **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140) sliders — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy in shared-phone classrooms.
+- **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140) sliders — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy.
 
 - **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making ***SEEn*** defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
 
