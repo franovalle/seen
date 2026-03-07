@@ -97,7 +97,7 @@
 | Clarity score derived from slider values, not actual vision measurement | Labeled as assistive tool only; no medical or diagnostic claims made |
 | CSS filters may not improve readability for all vision profiles | Filter ranges (contrast 100–300, brightness 80–140, zoom 1.0–4.0) tested and adjusted in-browser |
 
-**Next Steps (with more time):**
+**Next Steps:**
 - Add AI/ML-powered auto-tune that suggests optimal contrast/brightness settings based on ambient light
 - Expand to Tumbling E chart for younger or non-literate users
 - Add multi-language UI support beyond the current language-neutral icon approach
