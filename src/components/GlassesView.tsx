@@ -15,7 +15,7 @@ interface Props {
 type Mode = 'near' | 'far';
 
 const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
-  const { videoRef, error, ready, startCamera } = useCamera();
+  const { videoRef, error, ready, flipCamera, flipping } = useCamera();
   const [infoOpen, setInfoOpen] = useState(false);
 
   const result = loadScreeningResult();
