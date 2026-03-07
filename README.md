@@ -3,7 +3,7 @@
 
 ***
 
-## 🎯 Problem Statement
+## Problem Statement
 
 **Who:** School-age girls in low-income countries who have no access to eye care, and for whom staying in school depends on being able to see.
 
@@ -11,11 +11,11 @@
 
 **Impact:** For millions of girls, eye care is the difference between staying in school and dropping out. Girls in low-income regions face heightened risk of exploitation and domestic labor when education breaks down (UN Women; Humanium). SEEn removes one barrier so she can at least see what's being taught.
 
-> 📌 Aligned with **SDG 4 – Quality Education** and **SDG 5 – Gender Equality**
+> Aligned with **SDG 4 – Quality Education** and **SDG 5 – Gender Equality**
 
 ***
 
-## ✨ Solution Overview
+## Solution Overview
 
 **What we built:** SEEn is a browser-based mobile web app that uses a phone's camera with XR-style overlays — zoom, contrast, and brightness controls — to help a student see the blackboard more clearly in real time. No install. No login. No data ever leaves the device.
 
@@ -27,11 +27,11 @@
 
 - **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making SEEn defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
 
-> ⚠️ **Disclaimer:** SEEn is an assistive clarity tool only. This near vision screening is not a replacement for a full eye exam. No diagnosis or prescription is made.
+> **Disclaimer:** SEEn is an assistive clarity tool only. This near vision screening is not a replacement for a full eye exam. No diagnosis or prescription is made.
 
 ***
 
-## 🚀 Quick Start & Demo Path
+## Quick Start & Demo Path
 
 ### Access (No Installation Required)
 **Requirements:** Any modern mobile browser — Chrome on Android (recommended) or Safari on iOS. No install. No account. No API keys.
@@ -39,22 +39,6 @@
 🔗 **Live App:** [Insert Lovable Link]
 
 > Just open the link on your phone and tap "Allow" when the browser requests camera access. That's it — no setup, no download, no login.
-
-### Run Locally (Optional)
-
-```sh
-# Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install dependencies
-npm i
-
-# Step 4: Start the development server
-npm run dev
-```
 
 ### 60-Second Demo Path
 
@@ -68,7 +52,7 @@ npm run dev
 
 ***
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
 | Component | Technology | Purpose |
 |---|---|---|
@@ -89,8 +73,6 @@ npm run dev
 | **Lovable** | Full app generation — built the complete 3-screen app: camera viewer, slider controls, Snellen chart flow, scoring logic, XR overlay, and library fix | Enabled a solo, low-code builder to ship a working mobile web app within the hackathon window |
 | **Perplexity** | Problem framing, architecture decisions, risk identification, scalability research, ethical copy review | Surfaced the riskiest assumption early; shaped no-backend, privacy-first architecture; verified all stats against IAPB, WHO, UN Women |
 
-> ℹ️ **goose Integration:** [If you used goose — add model name and specific implementation here. If goose was not part of your build, delete this line.]
-
 ***
 
 ## 📋 Project Logs & Documentation
@@ -104,7 +86,7 @@ npm run dev
 
 ***
 
-## 🧪 Testing & Known Issues
+## Testing & Known Issues
 
 **Test Results:** End-to-end flow tested on MacBook Air (browser) and Android Chrome — no crashes, silent WebXR fallback confirmed working.
 
@@ -122,16 +104,11 @@ npm run dev
 
 ***
 
-## 👥 Team & Acknowledgments
+##  Team & Acknowledgments
 
-**Team Name:** France O
+| France O | Product, Design, Architecture | 
 
-| Name | Role | GitHub | LinkedIn |
-|---|---|---|---|
-| France O | Solo Builder — Product, Design, Architecture | [@username] | [Profile Link] |
-
-**Special thanks to:** CreateHER Fest, the #75HER Challenge organizers, IAPB & Seva Foundation for open-access vision data, WHO for global eye care research, and goose/Block.
-
+**Special thanks to:** CreateHER Fest co-founders Adriann & Darlyze, and the #75HER Challenge organizers, volunteers, and speakers for their support and guidance throughout this journey.
 ***
 
 ## 📄 License & Attributions
@@ -158,6 +135,5 @@ npm run dev
 
 ***
 
-*Built with ❤️ for #75HER Challenge | CreateHER Fest 2026*
 
 
