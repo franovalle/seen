@@ -79,10 +79,10 @@
 
 | Log Type | Purpose | Link to Documentation |
 |---|---|---|
-| Decision Log | All tech stack, architecture, and feature scope choices with tradeoffs | [Link to /docs/DECISION_LOG.md] |
-| Risk Log | 7 risks identified (Critical + Major) — all marked Fixed | [Link to /docs/RISK_LOG.md] |
-| Evidence Log | 13+ sources, code libraries, assets, and AI-generated content with attributions | [Link to /docs/EVIDENCE_LOG.md] |
-| 4-Line Problem Frame | User, problem, constraints, and success test with AI pressure-test | [Link to /docs/PROBLEM_FRAME.md] |
+| Decision Log | All tech stack, architecture, and feature scope choices with tradeoffs | https://docs.google.com/document/d/1lIepVTmJ82cSaEJJ40JHIC6Rd59WiLG0ycRSVCMjj3g/edit?usp=sharing |
+| Risk Log | 7 risks identified (Critical + Major) — all marked Fixed | https://docs.google.com/document/d/1PdS_CKm5kJqVSLnPwwe0IpLDDi2VT8XxkKLnbDgSYN4/edit?usp=sharing |
+| Evidence Log | 13+ sources, code libraries, assets, and AI-generated content with attributions | https://docs.google.com/document/d/1KWoCY6bLS7wEOupU4EEg0S6FCeUT7Ziwn3xW6PvnOMQ/edit?usp=sharing |
+| 4-Line Problem Frame | User, problem, constraints, and success test with AI pressure-test | https://docs.google.com/document/d/1G-eLgDrSUVoXf5R9cDs1DTRr0D8UJ5vro4tithl6DIs/edit?usp=sharing |
 
 ***
 
