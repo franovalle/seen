@@ -88,7 +88,7 @@
 
 ## Testing & Known Issues
 
-**Test Results:** End-to-end flow tested on MacBook Air (browser) and Android Chrome — no crashes, silent WebXR fallback confirmed working.
+**Test Results:** End-to-end flow tested on MacBook Air (browser) and Iphone — confirmed working.
 
 | Known Issue | Workaround |
 |---|---|
