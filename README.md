@@ -23,7 +23,7 @@
 
 - **Language-Neutral Vision Check (Snellen Flow):** A 3-screen flow (Welcome → Letter Test → Results) using a 6-row Snellen-style letter chart with tap-based answers instead of reading letters aloud — works across all languages with no literacy barrier. Scoring shows Mild / Moderate / Significant clarity output.
 
-- **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140) sliders — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy.
+- **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140), all starting at neutral defaults — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy.
 
 - **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making ***SEEn*** defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
 
@@ -97,6 +97,12 @@
 | Clarity score derived from slider values, not actual vision measurement | Labeled as assistive tool only; no medical or diagnostic claims made |
 | CSS filters may not improve readability for all vision profiles | Filter ranges (contrast 100–300, brightness 80–140, zoom 1.0–4.0) tested and adjusted in-browser |
 | Self-exam UX: buttons may be difficult to read if vision is already blurry | Read and familiarize yourself with all on-screen buttons before starting the exam; guided setup screen planned for v2 |
+| Camera defaulted to 640×480, stretched to fill screen | HD resolution (1920×1080 ideal) added |
+| Camera defaulted to wrong facing side | `facingMode: environment` default + flip button added |
+| Default sliders set to 150% contrast + 1.5× zoom | Fallback reset to neutral (zoom 1.0, contrast 100, brightness 100) |
+| Reset button loaded cached preset instead of neutral | Hardcoded to true neutral values |
+| Camera sharpness | Camera works but not as sharp as intended — v2 fix planned |
+
 
 **Next Steps:**
 - Add AI/ML-powered auto-tune that suggests optimal contrast/brightness settings based on ambient light
