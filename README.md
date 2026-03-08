@@ -46,7 +46,8 @@
 
 **Step 2:** Tap "Start Vision Check" → Work through the 6-row Snellen letter chart by tapping the clearer option per row → Results screen shows your clarity level in under 2 minutes.
 
-**Step 3:** Point your phone at a blackboard or text → Use the zoom, contrast, and brightness sliders to adjust until text is visibly clearer → The AR HUD shows a real-time clarity score (High / Medium / Low).
+**Step 3:** Point your phone at a blackboard or text → The camera opens pre-calibrated to your vision screening result. Fine-tune 
+with the zoom, contrast, and brightness sliders if needed → The AR HUD shows a real-time clarity score (High / Medium / Low).
 
  **Demo Video:** https://youtu.be/AnR0XR8bCXg | **Live App:** https://seenbyher.lovable.app
 
@@ -59,7 +60,8 @@
 | **Frontend** | React 18.3.1 + Tailwind CSS (via Lovable) | Single-page mobile web UI; Poppins/Nunito typography; cream/coral WCAG AA palette |
 | **Build Tool** | Vite + TypeScript | Fast dev server and type-safe codebase |
 | **UI Components** | shadcn-ui | Pre-built accessible component library |
-| **Camera** | HTML5 `getUserMedia` API | Live camera view; no facingMode constraint so works on phones and laptops |
+| **Camera** | HTML5 `getUserMedia` API | Live camera view; defaults to rear camera (facingMode: environment) 
+with front/back flip button for switching cameras|
 | **Visual Filters** | CSS `filter` (contrast/brightness) + CSS `transform: scale()` | Real-time clarity adjustments — no server processing |
 | **AR/XR Layer** | `@react-three/xr` + Three.js v0.150.0 | WebXR session with silent fallback for unsupported devices (iOS Safari) |
 | **Backend** | None | All logic runs client-side; no uploads, no analytics, no stored data |
