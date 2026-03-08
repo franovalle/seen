@@ -48,7 +48,7 @@
 
 **Step 3:** Point your phone at a blackboard or text → Use the zoom, contrast, and brightness sliders to adjust until text is visibly clearer → The AR HUD shows a real-time clarity score (High / Medium / Low).
 
- **Demo Video:** [Insert YouTube/Loom Link] | **Live App:** https://seenbyher.lovable.app
+ **Demo Video:** https://youtu.be/AnR0XR8bCXg | **Live App:** https://seenbyher.lovable.app
 
 ***
 
