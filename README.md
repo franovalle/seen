@@ -5,7 +5,7 @@
 
 ## Problem Statement
 
-**Who:** School-age girls in low-income countries who have no access to eye care, and for whom staying in school depends on being able to see (IAPB & Seva Foundation, 2024)..
+**Who:** School-age girls in low-income countries who have no access to eye care, and for whom staying in school depends on being able to see (IAPB & Seva Foundation, 2024).
 
 **Problem:** Every school day, 17.8 million children attend class unable to see the board, learning half as much as their peers (IAPB & Seva Foundation, 2024). In low-income countries, 2 out of 3 people who need eye care cannot get it — and girls bear the heaviest burden (WHO, May 2025).
 
@@ -60,8 +60,7 @@ with the zoom, contrast, and brightness sliders if needed → The AR HUD shows a
 | **Frontend** | React 18.3.1 + Tailwind CSS (via Lovable) | Single-page mobile web UI; Poppins/Nunito typography; cream/coral WCAG AA palette |
 | **Build Tool** | Vite + TypeScript | Fast dev server and type-safe codebase |
 | **UI Components** | shadcn-ui | Pre-built accessible component library |
-| **Camera** | HTML5 `getUserMedia` API | Live camera view; defaults to rear camera (facingMode: environment) 
-with front/back flip button for switching cameras|
+| **Camera** | HTML5 `getUserMedia` API | Live camera view; defaults to rear camera (facingMode: environment)with front/back flip button for switching cameras|
 | **Visual Filters** | CSS `filter` (contrast/brightness) + CSS `transform: scale()` | Real-time clarity adjustments — no server processing |
 | **AR/XR Layer** | `@react-three/xr` + Three.js v0.150.0 | WebXR session with silent fallback for unsupported devices (iOS Safari) |
 | **Backend** | None | All logic runs client-side; no uploads, no analytics, no stored data |
