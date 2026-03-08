@@ -16,7 +16,7 @@ const Index = () => {
   };
 
   if (screen === 'screening') {
-    return <XRScreeningWrapper onComplete={() => setScreen('glasses')} />;
+    return <XRScreeningWrapper onComplete={() => setTimeout(() => setScreen('glasses'), 100)} />;
   }
 
   return <GlassesView onRecalibrate={handleRecalibrate} />;
