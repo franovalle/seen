@@ -49,7 +49,7 @@
 **Step 3:** Point your phone at a blackboard or text → The camera opens pre-calibrated to your vision screening result. Fine-tune 
 with the zoom, contrast, and brightness sliders if needed → The AR HUD shows a real-time clarity score (High / Medium / Low).
 
- **Demo Video:** https://youtu.be/AnR0XR8bCXg | **Live App:** https://seenbyher.lovable.app
+ **Demo Video:** https://youtu.be/7Fwe8m3eJBI?si=LaLeunxjpfQ8DLzW | **Live App:** https://seenbyher.lovable.app
 
 ***
 
