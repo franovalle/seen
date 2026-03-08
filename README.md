@@ -5,7 +5,7 @@
 
 ## Problem Statement
 
-**Who:** School-age girls in low-income countries who have no access to eye care, and for whom staying in school depends on being able to see.
+**Who:** School-age girls in low-income countries who have no access to eye care, and for whom staying in school depends on being able to see (IAPB & Seva Foundation, 2024)..
 
 **Problem:** Every school day, 17.8 million children attend class unable to see the board, learning half as much as their peers (IAPB & Seva Foundation, 2024). In low-income countries, 2 out of 3 people who need eye care cannot get it — and girls bear the heaviest burden (WHO, May 2025).
 
@@ -23,7 +23,7 @@
 
 - **Language-Neutral Vision Check (Snellen Flow):** A 3-screen flow (Welcome → Letter Test → Results) using a 6-row Snellen-style letter chart with tap-based answers instead of reading letters aloud — works across all languages with no literacy barrier. Scoring shows Mild / Moderate / Significant clarity output.
 
-- **XR Clarity Viewer:** Live camera feed with zoom (1.0×–4.0×), contrast (100–300), and brightness (80–140) — lets a girl adjust the view until the board text is readable. All processing stays on-device; no images are sent to a server, protecting privacy.
+- **XR Clarity Viewer: Live camera feed that opens pre-calibrated — zoom, contrast, and brightness are automatically set based on the user's vision screening result. Manual sliders (zoom 1.0×–4.0×, contrast 100–300, brightness 80–140) are available for fine-tuning. All processing stays on-device; no images are sent to a server, protecting privacy.
 
 - **Floating AR HUD Clarity Score:** A real-time AR overlay displaying a High / Medium / Low clarity score calculated from slider values, plus a coral targeting reticle — making ***SEEn*** defensibly XR beyond a basic camera filter. Includes a language-neutral SVG stick figure showing how to hold the phone.
 
@@ -88,7 +88,7 @@
 
 ## Testing & Known Issues
 
-**Test Results:** End-to-end flow tested on MacBook Air (browser) and Iphone — confirmed working.
+**Test Results:** End-to-end flow tested on MacBook Air (browser) and Iphone— confirmed working.
 
 | Known Issue | Workaround |
 |---|---|
@@ -99,9 +99,8 @@
 | Self-exam UX: buttons may be difficult to read if vision is already blurry | Read and familiarize yourself with all on-screen buttons before starting the exam; guided setup screen planned for v2 |
 | Camera defaulted to 640×480, stretched to fill screen | HD resolution (1920×1080 ideal) added - v2 fix planned |
 | Camera defaulted to wrong facing side | `facingMode: environment` default + flip button added |
-| Default sliders set to 150% contrast + 1.5× zoom | Fallback reset to neutral (zoom 1.0, contrast 100, brightness 100)- v2 fix planned|
-| Reset button loaded cached preset instead of neutral | Hardcoded to true neutral values - v2 fix planned |
 | Camera sharpness | Camera works but not as sharp as intended — v2 fix planned |
+|Camera sharpness not optimized for all devices| Camera works but not as sharp as intended — HD resolution (1920×1080) and sharpness constraints planned for v2|
 
 
 **Next Steps:**
