@@ -18,13 +18,19 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
   const { videoRef, error, ready, flipCamera, flipping } = useCamera();
   const [infoOpen, setInfoOpen] = useState(false);
 
-  const result = loadScreeningResult();
-  const basePreset = result?.preset ?? { zoom: 1.0, contrast: 100, brightness: 100 };
-
   const [mode, setMode] = useState<Mode>('near');
-  const [zoom, setZoom] = useState(basePreset.zoom);
-  const [contrast, setContrast] = useState(basePreset.contrast);
-  const [brightness, setBrightness] = useState(basePreset.brightness);
+  const [zoom, setZoom] = useState(1.0);
+  const [contrast, setContrast] = useState(100);
+  const [brightness, setBrightness] = useState(100);
+
+  useEffect(() => {
+    const result = loadScreeningResult();
+    if (result?.preset) {
+      setZoom(result.preset.zoom);
+      setContrast(result.preset.contrast);
+      setBrightness(result.preset.brightness);
+    }
+  }, []);
 
   const handleAmbientBrightness = useCallback((v: number) => {
     setBrightness(v);
