@@ -48,7 +48,9 @@ const GlassesView: React.FC<Props> = ({ onRecalibrate }) => {
   };
 
   const handleReset = () => {
-    applyPreset(mode === 'near' ? NEAR_PRESET : FAR_PRESET);
+    setZoom(1.0);
+    setContrast(100);
+    setBrightness(100);
   };
 
   if (error) {
